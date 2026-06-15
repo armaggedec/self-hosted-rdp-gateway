@@ -1,0 +1,8 @@
+{$DOMAIN} {
+    # Корень перенаправляем на /guacamole/ (приложение живёт не в /)
+    redir / /guacamole/ 308
+
+    reverse_proxy guacamole:8080 {
+        flush_interval -1
+    }
+}
